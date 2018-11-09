@@ -8,4 +8,5 @@ SOURCES += \
 
 HEADERS += \
     main.h \
-    command.h
+    command.h \
+    mishrc.h
