@@ -10,7 +10,9 @@
 #include<iterator>
 #include<cctype>
 #include<algorithm>
+#include<unistd.h>
+#include<sys/stat.h>
 
-std::string username=getenv("USER"),terminal,userdir="/home/"+username+"/\n";
+std::string username=getenv("USER"),terminal,userdir="/home/"+username+"/",currentwdir=userdir,title;
 
 #endif // MAIN_H

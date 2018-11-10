@@ -14,7 +14,7 @@ void get_mishrc(){
         ofs<<"#\n# ~/.mishrc\n#\n\n# If not running interactively, don't do anything\n";
         ofs<<"terminal=gnome-terminal\n";
         ofs.close();
-        std::ifstream ifs(userdir+".mishrc");
+        terminal="gnome-terminal";
     }
     else{
         while(std::getline(ifs,bfrc)){

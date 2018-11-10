@@ -9,4 +9,11 @@ SOURCES += \
 HEADERS += \
     main.h \
     command.h \
-    mishrc.h
+    mishrc.h \
+    help.h \
+    n_function.h \
+    cd.h \
+    cat.h \
+    exit.h \
+    ls.h \
+    echo.h
