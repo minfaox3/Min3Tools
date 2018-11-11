@@ -8,7 +8,9 @@
 #include"exit.h"
 #include"echo.h"
 #include"nano.h"
+#include"touch.h"
 #include"vim.h"
+#include"mkdir.h"
 
 bool help(std::vector<std::string>Answer){
     if(Answer[1]=="exit")h_exit();
@@ -24,6 +26,8 @@ bool help(std::vector<std::string>Answer){
     else if(Answer[1]=="ls")h_ls();
     else if(Answer[1]=="nano")h_nano();
     else if(Answer[1]=="vim")h_vim();
+    else if(Answer[1]=="touch")h_touch();
+    else if(Answer[1]=="mkdir")h_mkdir();
     else if(Answer[1]==""){
         std::cout<<"mish is provided by Min3Tools, version 0.1.0-semirelease (x86_x64-unkown-linux)\n";
         std::cout<<"These are supported commands.\n";
@@ -33,6 +37,7 @@ bool help(std::vector<std::string>Answer){
         std::cout<<"help(-h) [command]          exit [-option]\n";
         std::cout<<"echo [arg ...]              cat file [-l line]\n";
         std::cout<<"cd [directory]              *ls [directory]\n";
+        std::cout<<"*mkdir directory            *touch file\n";
         std::cout<<"+vim [file]                 +nano [file]\n";
     }
     else std::cout<<"Unkown command '"<<Answer[1]<<"'.\n";

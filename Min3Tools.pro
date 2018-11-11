@@ -19,4 +19,6 @@ HEADERS += \
     echo.h \
     nano.h \
     vim.h \
-    mishhistory.h
+    mishhistory.h \
+    touch.h \
+    mkdir.h

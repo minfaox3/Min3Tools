@@ -10,7 +10,9 @@
 #include "exit.h"
 #include "echo.h"
 #include "nano.h"
+#include "touch.h"
 #include "n_function.h"
+#include "mkdir.h"
 
 bool command(std::vector<std::string> Answer){
         Answer.push_back("");
@@ -22,6 +24,8 @@ bool command(std::vector<std::string> Answer){
         else if(Answer[0]=="ls")return ls(Answer);
         else if(Answer[0]=="nano")return nano(Answer);
         else if(Answer[0]=="vim")return vim(Answer);
+        else if(Answer[0]=="touch")return touch(Answer);
+        else if(Answer[0]=="mkdir")return mkdir(Answer);
         else if(Answer[0].empty()!=true){
             system(Answer[0].c_str());
             return true;

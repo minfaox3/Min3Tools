@@ -10,6 +10,7 @@
 #include<iterator>
 #include<cctype>
 #include<algorithm>
+#include<algorithm>
 #include<unistd.h>
 #include<sys/stat.h>
 

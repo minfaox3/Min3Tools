@@ -18,6 +18,7 @@ int main(){
         title=username+"::"+currentwdir;
         std::cout << "\033]0;" <<title<< "\007";
         Answer.clear();
+        rebuf.clear();
         if(currentwdir==userdir)std::cout<<username<<"::~->";
         else if(currentwdir=="/")std::cout<<username<<"::/->";
         else if(currentwdir.find("/home/minfaox3/")==0){
@@ -28,12 +29,12 @@ int main(){
         else if(currentwdir[currentwdir.length()-1]=='/')std::cout<<username<<"::"<<currentwdir<<"\b->";
         else std::cout<<username<<"::"<<currentwdir<<"->";
         std::getline(std::cin,Ans);
-        if(Ans=="re"){/*
+        if(Ans=="re"){
             rebuf=mishhistory(false,"dummy");
-            br=rebuf[rebuf.size()];
-            std::cout<<br;
-            Answer=SplitStr(br,' ');*/
-            if(command(rebuf)==false)std::cout<<"It command  have an error :(\n";
+            std::reverse(rebuf.begin(),rebuf.end());
+            br=rebuf[0];
+            Answer=SplitStr(br,' ');
+            if(command(Answer)==false)std::cout<<"It command  have an error :(\n";
         }
         else if(Ans!=""){
             mishhistory(true,Ans);
