@@ -16,4 +16,7 @@ HEADERS += \
     cat.h \
     exit.h \
     ls.h \
-    echo.h
+    echo.h \
+    nano.h \
+    vim.h \
+    mishhistory.h

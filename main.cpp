@@ -1,11 +1,12 @@
 #include"main.h"
 #include"command.h"
 #include"mishrc.h"
+#include"mishhistory.h"
 #include"n_function.h"
 
 int main(){
-    std::vector<std::string> Answer;
-    std::string Ans,bc;
+    std::vector<std::string> Answer,rebuf;
+    std::string Ans,bc,br;
     get_mishrc();
     std::cout<<"   /  |/  (_)___ |__  /_  __/___  ____  / /____\n";
     std::cout<<"  / /|_/ / / __ \\ /_ < / / / __ \\/ __ \\/ / ___/\n";
@@ -15,7 +16,6 @@ int main(){
     std::cout<<"\nmish is running!\nIf you don't know how to use, please type 'help' or '-h'.\n\n";
     while(1){
         title=username+"::"+currentwdir;
-        if(currentwdir==userdir)title=username+"::~";
         std::cout << "\033]0;" <<title<< "\007";
         Answer.clear();
         if(currentwdir==userdir)std::cout<<username<<"::~->";
@@ -25,11 +25,20 @@ int main(){
             bc.erase(0,15);
             std::cout<<username<<"::~/"<<bc<<"\b->";
         }
-        else std::cout<<username<<"::"<<currentwdir<<"\b->";
+        else if(currentwdir[currentwdir.length()-1]=='/')std::cout<<username<<"::"<<currentwdir<<"\b->";
+        else std::cout<<username<<"::"<<currentwdir<<"->";
         std::getline(std::cin,Ans);
-        std::ifstream ifs("");
-        if(Ans!=""){
+        if(Ans=="re"){/*
+            rebuf=mishhistory(false,"dummy");
+            br=rebuf[rebuf.size()];
+            std::cout<<br;
+            Answer=SplitStr(br,' ');*/
+            if(command(rebuf)==false)std::cout<<"It command  have an error :(\n";
+        }
+        else if(Ans!=""){
+            mishhistory(true,Ans);
             Answer=SplitStr(Ans,' ');
+            rebuf=Answer;
             if(command(Answer)==false)std::cout<<"It command  have an error :(\n";
         }
     }

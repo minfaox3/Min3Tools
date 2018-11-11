@@ -6,8 +6,10 @@
 #include "cd.h"
 #include "ls.h"
 #include "cat.h"
+#include "vim.h"
 #include "exit.h"
 #include "echo.h"
+#include "nano.h"
 #include "n_function.h"
 
 bool command(std::vector<std::string> Answer){
@@ -18,6 +20,8 @@ bool command(std::vector<std::string> Answer){
         else if(Answer[0]=="cat")return cat(Answer);
         else if(Answer[0]=="cd")return cd(Answer);
         else if(Answer[0]=="ls")return ls(Answer);
+        else if(Answer[0]=="nano")return nano(Answer);
+        else if(Answer[0]=="vim")return vim(Answer);
         else if(Answer[0].empty()!=true){
             system(Answer[0].c_str());
             return true;
