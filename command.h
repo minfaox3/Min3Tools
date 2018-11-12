@@ -13,6 +13,7 @@
 #include "touch.h"
 #include "n_function.h"
 #include "mkdir.h"
+#include "rm.h"
 
 bool command(std::vector<std::string> Answer){
         Answer.push_back("");
@@ -26,6 +27,7 @@ bool command(std::vector<std::string> Answer){
         else if(Answer[0]=="vim")return vim(Answer);
         else if(Answer[0]=="touch")return touch(Answer);
         else if(Answer[0]=="mkdir")return mkdir(Answer);
+        else if(Answer[0]=="rm")return rm(Answer);
         else if(Answer[0].empty()!=true){
             system(Answer[0].c_str());
             return true;

@@ -21,7 +21,7 @@ int main(){
         rebuf.clear();
         if(currentwdir==userdir)std::cout<<username<<"::~->";
         else if(currentwdir=="/")std::cout<<username<<"::/->";
-        else if(currentwdir.find("/home/minfaox3/")==0){
+        else if(currentwdir.find(userdir)==0){
             bc=currentwdir;
             bc.erase(0,15);
             std::cout<<username<<"::~/"<<bc<<"\b->";
@@ -39,7 +39,6 @@ int main(){
         else if(Ans!=""){
             mishhistory(true,Ans);
             Answer=SplitStr(Ans,' ');
-            rebuf=Answer;
             if(command(Answer)==false)std::cout<<"It command  have an error :(\n";
         }
     }

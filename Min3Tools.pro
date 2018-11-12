@@ -21,4 +21,5 @@ HEADERS += \
     vim.h \
     mishhistory.h \
     touch.h \
-    mkdir.h
+    mkdir.h \
+    rm.h
