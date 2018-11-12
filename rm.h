@@ -18,7 +18,6 @@ bool rm(std::vector<std::string>Answer){
         }
         else{
             nanos="rm -r "+Answer[2];
-            std::cout<<"DB-"<<nanos<<"\n";
             system(nanos.c_str());
         }
     }

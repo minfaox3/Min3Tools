@@ -22,4 +22,5 @@ HEADERS += \
     mishhistory.h \
     touch.h \
     mkdir.h \
-    rm.h
+    rm.h \
+    atc.h

@@ -13,6 +13,7 @@
 #include "touch.h"
 #include "n_function.h"
 #include "mkdir.h"
+#include "atc.h"
 #include "rm.h"
 
 bool command(std::vector<std::string> Answer){
@@ -23,11 +24,14 @@ bool command(std::vector<std::string> Answer){
         else if(Answer[0]=="cat")return cat(Answer);
         else if(Answer[0]=="cd")return cd(Answer);
         else if(Answer[0]=="ls")return ls(Answer);
+        else if(Answer[0]=="help"||Answer[0]=="-h")return help(Answer);
         else if(Answer[0]=="nano")return nano(Answer);
         else if(Answer[0]=="vim")return vim(Answer);
         else if(Answer[0]=="touch")return touch(Answer);
         else if(Answer[0]=="mkdir")return mkdir(Answer);
+        else if(Answer[0]=="atc")return atc1x00();
         else if(Answer[0]=="rm")return rm(Answer);
+        else if(Answer[0]=="sudo"||Answer[0]=="su"){std::cout<<"You can not do it!.Please ask to owner.\n";return true;}
         else if(Answer[0].empty()!=true){
             system(Answer[0].c_str());
             return true;
